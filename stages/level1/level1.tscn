@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqgo30beogg4c"]
 
 [ext_resource type="Script" uid="uid://cjs0tx1fknkdv" path="res://stages/level1/level1.gd" id="1_c1s1n"]
+[ext_resource type="AudioStream" uid="uid://cabwm5xmhejq" path="res://global/assets/audio/House In a Forest Loop.ogg" id="2_03qmw"]
 [ext_resource type="PackedScene" uid="uid://bs7lyqh24q6o8" path="res://entities/enemy/red_enemy.tscn" id="2_kls58"]
 [ext_resource type="PackedScene" uid="uid://bcvsdmgh1xocg" path="res://entities/enemy/yellow_enemy.tscn" id="3_03qmw"]
 [ext_resource type="PackedScene" uid="uid://br3811yvvijlm" path="res://stages/win_area/win_area.tscn" id="4_kls58"]
@@ -17,6 +18,11 @@ font_size = 120
 
 [node name="Game" type="Node2D" unique_id=669624063]
 script = ExtResource("1_c1s1n")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=378206574]
+stream = ExtResource("2_03qmw")
+autoplay = true
+parameters/looping = true
 
 [node name="Walls" type="Node" parent="." unique_id=1538529649]
 

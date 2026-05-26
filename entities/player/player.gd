@@ -23,3 +23,4 @@ func _process(_delta: float) -> void:
 # Call this function when player collide with enemy
 func reset_player() -> void:
 	global_position = spawn_point
+	$HitSound.play()

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ca3jr06ey3wdb" path="res://entities/player/art/player.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://j2lqea011tp4" path="res://entities/player/player.gd" id="1_abrql"]
+[ext_resource type="AudioStream" uid="uid://cplqi0vfdtb1q" path="res://global/assets/audio/gameover.wav" id="2_sglur"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
 radius = 19.0
@@ -11,6 +12,9 @@ height = 50.0
 scale = Vector2(2, 2)
 motion_mode = 1
 script = ExtResource("1_abrql")
+
+[node name="HitSound" type="AudioStreamPlayer" parent="." unique_id=1758211865]
+stream = ExtResource("2_sglur")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1220739696]
 position = Vector2(1.0000005, -1)
