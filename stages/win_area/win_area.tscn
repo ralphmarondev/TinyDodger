@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://br3811yvvijlm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_lh7my"]
+size = Vector2(60, 760)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fuw6r"]
+size = Vector2(29, 755.75)
+
+[node name="WinArea" type="Area2D" unique_id=39225989]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=318081809]
+modulate = Color(0.49699807, 0.85145414, 0.55954456, 1)
+position = Vector2(23, 362)
+mesh = SubResource("QuadMesh_lh7my")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052025786]
+position = Vector2(40, 360.125)
+shape = SubResource("RectangleShape2D_fuw6r")

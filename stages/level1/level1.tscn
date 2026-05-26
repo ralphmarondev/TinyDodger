@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://bqgo30beogg4c"]
 
-[ext_resource type="PackedScene" uid="uid://bs7lyqh24q6o8" path="res://entities/enemy/red_enemy.tscn" id="1_2p4ms"]
-[ext_resource type="PackedScene" uid="uid://bkxmi31w7l70x" path="res://entities/player/player.tscn" id="1_rydfh"]
-[ext_resource type="PackedScene" uid="uid://bcvsdmgh1xocg" path="res://entities/enemy/yellow_enemy.tscn" id="2_4b1jd"]
+[ext_resource type="Script" uid="uid://cjs0tx1fknkdv" path="res://stages/level1/level1.gd" id="1_c1s1n"]
+[ext_resource type="PackedScene" uid="uid://bs7lyqh24q6o8" path="res://entities/enemy/red_enemy.tscn" id="2_kls58"]
+[ext_resource type="PackedScene" uid="uid://bcvsdmgh1xocg" path="res://entities/enemy/yellow_enemy.tscn" id="3_03qmw"]
+[ext_resource type="PackedScene" uid="uid://br3811yvvijlm" path="res://stages/win_area/win_area.tscn" id="4_kls58"]
+[ext_resource type="PackedScene" uid="uid://bkxmi31w7l70x" path="res://entities/player/player.tscn" id="4_sfqmh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rydfh"]
 size = Vector2(1295, 20)
@@ -11,6 +13,7 @@ size = Vector2(1295, 20)
 size = Vector2(742.9884, 29.783836)
 
 [node name="Game" type="Node2D" unique_id=669624063]
+script = ExtResource("1_c1s1n")
 
 [node name="Walls" type="Node" parent="." unique_id=1538529649]
 
@@ -49,29 +52,34 @@ debug_color = Color(0.8369626, 0.30601424, 0.6102813, 0.41960785)
 
 [node name="Enemies" type="Node" parent="." unique_id=1809472681]
 
-[node name="RedEnemy1" parent="Enemies" unique_id=1919836522 instance=ExtResource("1_2p4ms")]
+[node name="RedEnemy1" parent="Enemies" unique_id=1919836522 instance=ExtResource("2_kls58")]
 position = Vector2(270, 114)
 
-[node name="RedEnemy2" parent="Enemies" unique_id=889290569 instance=ExtResource("1_2p4ms")]
+[node name="RedEnemy2" parent="Enemies" unique_id=889290569 instance=ExtResource("2_kls58")]
 position = Vector2(415, 278)
 
-[node name="RedEnemy3" parent="Enemies" unique_id=1219789995 instance=ExtResource("1_2p4ms")]
+[node name="RedEnemy3" parent="Enemies" unique_id=1219789995 instance=ExtResource("2_kls58")]
 position = Vector2(575, 481)
 
-[node name="RedEnemy4" parent="Enemies" unique_id=457448810 instance=ExtResource("1_2p4ms")]
+[node name="RedEnemy4" parent="Enemies" unique_id=457448810 instance=ExtResource("2_kls58")]
 position = Vector2(934, 137)
 
-[node name="RedEnemy5" parent="Enemies" unique_id=959682431 instance=ExtResource("1_2p4ms")]
-position = Vector2(1121, 512)
+[node name="RedEnemy5" parent="Enemies" unique_id=959682431 instance=ExtResource("2_kls58")]
+position = Vector2(1053, 497)
 
-[node name="YellowEnemy1" parent="Enemies" unique_id=1123540840 instance=ExtResource("2_4b1jd")]
+[node name="YellowEnemy1" parent="Enemies" unique_id=1123540840 instance=ExtResource("3_03qmw")]
 position = Vector2(418, 531)
 
-[node name="YellowEnemy2" parent="Enemies" unique_id=1911356139 instance=ExtResource("2_4b1jd")]
+[node name="YellowEnemy2" parent="Enemies" unique_id=1911356139 instance=ExtResource("3_03qmw")]
 position = Vector2(667, 153)
 
-[node name="YellowEnemy3" parent="Enemies" unique_id=1468484769 instance=ExtResource("2_4b1jd")]
+[node name="YellowEnemy3" parent="Enemies" unique_id=1468484769 instance=ExtResource("3_03qmw")]
 position = Vector2(775, 371)
 
-[node name="Player" parent="." unique_id=1585690599 instance=ExtResource("1_rydfh")]
+[node name="WinArea" parent="." unique_id=39225989 instance=ExtResource("4_kls58")]
+position = Vector2(1206, -1)
+
+[node name="Player" parent="." unique_id=1585690599 instance=ExtResource("4_sfqmh")]
 position = Vector2(100, 300)
+
+[connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
