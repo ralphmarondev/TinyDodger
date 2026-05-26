@@ -1,6 +1,7 @@
 class_name Player extends CharacterBody2D
 
 var speed := 300
+var spawn_point := Vector2(100, 300)
 
 func _process(_delta: float) -> void:
 	var direction = Vector2(0, 0)
@@ -18,3 +19,7 @@ func _process(_delta: float) -> void:
 	direction = direction.normalized()
 	velocity = direction * speed
 	move_and_slide()
+
+# Call this function when player collide with enemy
+func reset_player() -> void:
+	global_position = spawn_point
