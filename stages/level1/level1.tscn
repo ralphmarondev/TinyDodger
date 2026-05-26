@@ -12,6 +12,9 @@ size = Vector2(1295, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2p4ms"]
 size = Vector2(742.9884, 29.783836)
 
+[sub_resource type="LabelSettings" id="LabelSettings_kls58"]
+font_size = 120
+
 [node name="Game" type="Node2D" unique_id=669624063]
 script = ExtResource("1_c1s1n")
 
@@ -71,15 +74,24 @@ position = Vector2(1053, 497)
 position = Vector2(418, 531)
 
 [node name="YellowEnemy2" parent="Enemies" unique_id=1911356139 instance=ExtResource("3_03qmw")]
-position = Vector2(667, 153)
+position = Vector2(651, 251)
 
 [node name="YellowEnemy3" parent="Enemies" unique_id=1468484769 instance=ExtResource("3_03qmw")]
-position = Vector2(775, 371)
+position = Vector2(795, 416)
 
 [node name="WinArea" parent="." unique_id=39225989 instance=ExtResource("4_kls58")]
 position = Vector2(1206, -1)
 
 [node name="Player" parent="." unique_id=1585690599 instance=ExtResource("4_sfqmh")]
 position = Vector2(100, 300)
+
+[node name="Label" type="Label" parent="." unique_id=2126411318]
+visible = false
+offset_left = 384.0
+offset_top = 18.0
+offset_right = 859.0
+offset_bottom = 183.0
+text = "You Win"
+label_settings = SubResource("LabelSettings_kls58")
 
 [connection signal="body_entered" from="WinArea" to="." method="_on_win_area_body_entered"]
