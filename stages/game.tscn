@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqgo30beogg4c"]
 
 [ext_resource type="PackedScene" uid="uid://bkxmi31w7l70x" path="res://entities/player/player.tscn" id="1_rydfh"]
+[ext_resource type="PackedScene" uid="uid://ce2piave12ywy" path="res://entities/enemy/enemy.tscn" id="2_2p4ms"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rydfh"]
 size = Vector2(1295, 20)
@@ -45,5 +46,10 @@ position = Vector2(713.0024, 3.541305)
 shape = SubResource("RectangleShape2D_2p4ms")
 debug_color = Color(0.8369626, 0.30601424, 0.6102813, 0.41960785)
 
+[node name="Enemies" type="Node" parent="." unique_id=1809472681]
+
+[node name="Enemy" parent="Enemies" unique_id=1919836522 instance=ExtResource("2_2p4ms")]
+position = Vector2(434, 115)
+
 [node name="Player" parent="." unique_id=1585690599 instance=ExtResource("1_rydfh")]
-position = Vector2(292, 232)
+position = Vector2(100, 300)
